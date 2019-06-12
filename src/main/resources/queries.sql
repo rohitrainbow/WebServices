@@ -77,5 +77,6 @@ insert into prod_descr values ('58','test',58);
 
 select * from product
 
-insert into product values('100', 'Beer', 'images/beer.jpg', 458.00,100);
+insert into product values('100', 'sets', 'Beer', 'images/beer.jpg',458.00,'pearl','100');
+select * from product;
 insert into prod_descr values ('100','test',100);
