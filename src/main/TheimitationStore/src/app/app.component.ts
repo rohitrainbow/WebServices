@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'The imitation Store';
-  public collapsed = true;
-  toggleCollapsed(): void {
-      this.collapsed = !this.collapsed;
-  }
 }

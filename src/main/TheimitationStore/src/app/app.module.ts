@@ -10,6 +10,7 @@ import { AboutComponent } from './ecommerce/about/about.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactComponent } from './ecommerce/contact/contact.component';
+import { NavbarComponent } from './ecommerce/navbar/navbar.component';
 
 const appRoutes: Routes = [{
   path: '',
@@ -43,7 +44,8 @@ const appRoutes: Routes = [{
     ProductDescrComponent,
     ProductsComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
