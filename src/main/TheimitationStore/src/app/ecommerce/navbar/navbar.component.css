@@ -18,7 +18,7 @@
 }
 
 .form-control {
-    width: 170px;
+    width: 200px;
     border-color: rgba(255, 217, 0, 0.795);
 }
 
@@ -30,6 +30,11 @@
     color: black !important;
     background-color: rgba(255, 217, 0, 0.795);
     border-color: black;
+}
+
+.dropdown:hover .dropdown-menu {
+    color: black !important;
+    display: block;
 }
 
 .navbar-icon-top .navbar-nav .nav-link>.fa {
@@ -143,4 +148,8 @@
     position: sticky;
     top: 0;
     font-size: 12px;
+}
+
+.dropdown-toggle::after {
+    display: none;
 }
