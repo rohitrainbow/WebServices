@@ -8,19 +8,49 @@
             <span class="navbar-toggler-icon"></span>
     </button>
 
-        <div id="navbarResponsive2" [ngClass]="{'collapse': collapsed2, 'navbar-collapse': true}">
-            <ul class="navbar-nav">
-
-                <li class="nav-item dropdown">
+        <div id="navbarResponsive2" [ngClass]="{'collapse': collapsed2, 'navbar-collapse': true}" style="font-size:15px; font-weight: bold;">
+            <ul id="multicol-menu" class="nav">
+                <li class="dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <i class="fa fa-female"></i> Women
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Action</a>
-                        <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+                                WOMEN
+                           </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="row">
+                                <ul class="list-unstyled col-md-5" style="width: 400px">
+                                    <li><a class="dropdown-header " data-toggle="collapse" data-target="#navbarResponsive2" href="#">Necklace</a></li>
+                                    <li> <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Pearl</a></li>
+                                    <li> <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Diamond</a></li>
+                                    <li> <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Gold</a></li>
+                                    <li> <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Mutli-Color</a></li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li><a class="dropdown-header " data-toggle="collapse" data-target="#navbarResponsive2" href="#">Rings</a></li>
+                                    <li> <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Pearl</a></li>
+                                    <li> <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Diamond</a></li>
+                                    <li> <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Gold</a></li>
+                                    <li> <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Mutli-Color</a></li>
+                                </ul>
+
+                                <ul class="list-unstyled col-md-5">
+                                    <li><a class="dropdown-header " data-toggle="collapse" data-target="#navbarResponsive2" href="#">Earrings</a></li>
+                                    <li> <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Pearl</a></li>
+                                    <li> <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Diamond</a></li>
+                                    <li> <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Gold</a></li>
+                                    <li> <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Mutli-Color</a></li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li><a class="dropdown-header " data-toggle="collapse" data-target="#navbarResponsive2" href="#">Others</a></li>
+                                    <li> <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Pearl</a></li>
+                                    <li> <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Diamond</a></li>
+                                    <li> <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Gold</a></li>
+                                    <li> <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive2" href="#">Mutli-Color</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -38,14 +68,33 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <i class="fa fa-user"></i> Profile
+                        <i class="fa fa-user">
+                                
+                                </i> Profile
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive" href="#">Action</a>
-                        <a class="dropdown-item" data-toggle="collapse" data-target="#navbarResponsive" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+                    <ul class="dropdown-menu keep-open">
+                        <li>
+                            <div class="row">
+                                <ul class="list-unstyled col-md-6" style="width: 240px">
+                                    <li><a class="dropdown-header " data-toggle="collapse" data-target="#navbarResponsive2" href="#" style="border-color: gold">Login</a></li>
+
+                                </ul>
+
+                                <ul class="list-unstyled col-md-6">
+                                    <li><a class="dropdown-header " data-toggle="collapse" data-target="#navbarResponsive2" href="#">Sign Up</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <hr class="dropdown-divider">>
+                        <li>
+                            <div class="row">
+                                <ul class="list-unstyled col-md-6" style="width: 240px;  text-emphasis: center;">
+                                    <li><a class="dropdown-item " data-toggle="collapse" data-target="#navbarResponsive" href="#">Orders</a></li>
+                                    <li><a class="dropdown-item " data-toggle="collapse" data-target="#navbarResponsive" href="#">Coupons</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" data-toggle="collapse" data-target="#navbarResponsive" (click)="redirect('about')"> <i class="fa fa-address-card">
