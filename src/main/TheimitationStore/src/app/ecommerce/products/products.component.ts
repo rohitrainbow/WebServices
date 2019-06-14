@@ -12,10 +12,7 @@ export class ProductsComponent implements OnInit {
   inputCriteria: String;
   products: Product[] = [];
 
-  constructor(private route: ActivatedRoute, private ecommerceService: EcommerceService) {
-    this.route.params.subscribe(params => {
-      this.inputCriteria = params.id;
-    });
+  constructor(private ecommerceService: EcommerceService) {
   }
 
   ngOnInit() {
@@ -30,11 +27,5 @@ export class ProductsComponent implements OnInit {
       );
   }
 
-  loadSearchedProducts() {
-    this.ecommerceService.getSearchedProducts(this.inputCriteria)
-      .subscribe((products: any[]) => {
-        this.products = products;
-      }
-      );
-  }
+
 }

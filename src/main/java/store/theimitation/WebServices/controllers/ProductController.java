@@ -41,9 +41,8 @@ public class ProductController {
 		return productService.getProductDetails(id);
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/api/searchedProducts/{inputCriteria}")
+	@RequestMapping("/api/searchedProducts/{inputCriteria}")
 	public @NotNull Iterable<Product> getSearchedProducts(@PathVariable String inputCriteria) {
-		System.out.println(inputCriteria);
 		return productService.getSearchedProducts(inputCriteria);
 	}
 }
