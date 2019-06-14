@@ -23,4 +23,7 @@ public interface ProductService {
 	public Product getUsingProductName(String name);
 	
 	ProductDto getProductDetails(Long id);
+	
+	
+	Iterable<Product> getSearchedProducts(String inputCriteria);
 }

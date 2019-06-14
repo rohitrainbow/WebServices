@@ -8,11 +8,16 @@ import { map } from "rxjs/operators";
 export class EcommerceService {
   private productsUrl = "api/products";
   private productDescrUrl = "api/product/";
+  private searchedProductsUrl="api/searchedProducts/";
 
   constructor(private http: HttpClient) { }
 
   getAllProducts() {
     return this.http.get(this.productsUrl);
+  }
+
+  getSearchedProducts(inputCriteria) {
+    return this.http.get(this.searchedProductsUrl+inputCriteria);
   }
 
   getProductDescr(id: string) {

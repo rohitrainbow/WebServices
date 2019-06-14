@@ -23,6 +23,11 @@ const appRoutes: Routes = [{
   data: { title: 'Home' }
 },
 {
+  path: 'home/:id',
+  component: EcommerceComponent,
+  data: { title: 'Home' }
+},
+{
   path: 'about',
   component: AboutComponent,
   data: { title: 'About Us' }
