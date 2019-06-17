@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import store.theimitation.WebServices.daos.ProductDao;
 import store.theimitation.WebServices.dtos.ProdDescrDto;
 import store.theimitation.WebServices.dtos.ProductDto;
 import store.theimitation.WebServices.exceptions.ResourceNotFoundException;
@@ -20,6 +21,9 @@ import store.theimitation.WebServices.repositories.ProductRepository;
 @Service
 @Transactional
 public class ProductServiceImpl implements ProductService {
+	
+	@Autowired
+	ProductDao productDao;
 
 	@Autowired
 	ProductDto productDto;
@@ -88,6 +92,6 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	public Iterable<Product> getSearchedProducts(String inputCriteria) {
-		return productRepository.findAll();
+		return productDao.getSearchedProducts(inputCriteria);
 	}
 }

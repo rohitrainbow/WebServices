@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EcommerceService } from '../services/ecommerce.service';
 import { Product } from '../model/product';
 
@@ -11,7 +11,7 @@ import { Product } from '../model/product';
 export class SearchComponent implements OnInit {
   products: Product[] = [];
   searchCriteria: String;
-  constructor(private route: ActivatedRoute,
+  constructor(private router: Router,private route: ActivatedRoute,
     private ecommerceService: EcommerceService) {
     this.route.params.subscribe(params => {
       this.searchCriteria = params.id;
@@ -28,5 +28,10 @@ export class SearchComponent implements OnInit {
         this.products = products;
       }
       );
+  }
+
+  search(input): void {
+    input='/home/'+input;
+    this.router.navigate([input]);
   }
 }

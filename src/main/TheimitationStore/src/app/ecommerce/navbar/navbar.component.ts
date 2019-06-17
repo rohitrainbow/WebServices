@@ -28,4 +28,8 @@ export class NavbarComponent implements OnInit {
     this.toggleCollapsed2();
     this.router.navigate([url]);
   }
+  search(input): void {
+    input='/home/'+input;
+    this.router.navigate([input]);
+  }
 }

@@ -1,4 +1,56 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,700);
+.btn-outline-success {
+    color: rgba(255, 217, 0, 0.795);
+    background-color: transparent;
+    background-image: none;
+    border-color: rgba(255, 217, 0, 0.795);
+}
+
+.btn-outline-success:hover {
+    background-color: rgba(255, 217, 0, 0.795);
+    border-color: rgba(255, 217, 0, 0.795);
+    color: black;
+}
+
+.btn-outline-success:focus,
+.btn-outline-success.focus {
+    box-shadow: 0 0 0 .5rem rgba(255, 217, 0, 0.795);
+}
+
+.form-inline {
+    justify-content: center;
+}
+
+.form-control {
+    width: 400px;
+    border-color: rgba(255, 217, 0, 0.795);
+}
+
 .padding-0 {
     padding-right: 0;
     padding-left: 1;
+}
+
+.circles {
+    background: black;
+    text-align: center;
+    position: center;
+    margin-top: -60px;
+    box-shadow: inset -1px -4px 4px rgba(0, 0, 0, 0.2);
+    padding-bottom: 100px;
+}
+
+.circles p {
+    font-size: 10px;
+    color: #fff;
+    padding-top: 60px;
+    position: relative;
+    z-index: 9;
+    line-height: 100%;
+}
+
+.circles p small {
+    font-size: 30px;
+    line-height: 100%;
+    vertical-align: top;
 }

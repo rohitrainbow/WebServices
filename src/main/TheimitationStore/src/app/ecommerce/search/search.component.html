@@ -18,3 +18,26 @@
         </div>
     </div>
 </div>
+
+
+<div class="circles" *ngIf="products.length==0">
+    <p> <small>You searched for <b style="color: rgba(255, 217, 0, 0.795)">{{searchCriteria}}.</b></small><br>
+        <br>
+        <img src="assets/img/noproduct.jpg"><br>
+        <small>We couldn't find any matches!</small><br><br><br>
+        <small style="font-size: 15px">Please check the spelling or try searching something else.</small>
+    </p>
+
+    <form class="form-inline ml-auto">
+        <input type='text' class="form-control mr-sm-0" #inputCriteria type="search" placeholder="Search" aria-label="Search">
+        <button (click)="search(inputCriteria.value)" class=" btn btn-outline-success my-0 my-sm-0 "><i class="fa fa-search "></i></button>
+
+    </form>
+    <small style="font-size: 15px;color: white"> Popular searches: Jewellery,Sets,Earrings,Pearl,Diamonds,Bracelet,Rings</small>
+    <p></p>
+
+
+</div>
+<div *ngIf="products.length==0">
+    <small style="font-size: 15px"> Vector Designed By from <a href="https://pngtree.com/freepng/gold-diamond_720012.html">Click</a></small>
+</div>

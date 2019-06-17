@@ -25,9 +25,11 @@ public class Product {
 	private String category;
 
 	private String subCategory;
+	
+	private String searchKeywords;
 
 	public Product(Long id, @NotNull(message = "Product name is required.") String name, Double price,
-			String pictureUrl, ProdDescr prodDescr, String category, String subCategory) {
+			String pictureUrl, ProdDescr prodDescr, String category, String subCategory,String searchKeywords) {
 		this.id = id;
 		this.name = name;
 		this.price = price;
@@ -35,6 +37,7 @@ public class Product {
 		this.prodDescr = prodDescr;
 		this.subCategory=subCategory;
 		this.category=category;
+		this.setSearchKeywords(searchKeywords);
 	}
 
 	public Product() {
@@ -94,6 +97,14 @@ public class Product {
 
 	public void setSubCategory(String subCategory) {
 		this.subCategory = subCategory;
+	}
+
+	public String getSearchKeywords() {
+		return searchKeywords;
+	}
+
+	public void setSearchKeywords(String searchKeywords) {
+		this.searchKeywords = searchKeywords;
 	}
 	
 	
