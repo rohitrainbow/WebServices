@@ -11,11 +11,13 @@ import { Product } from '../model/product';
 export class SearchComponent implements OnInit {
   products: Product[] = [];
   searchCriteria: String;
-  constructor(private router: Router,private route: ActivatedRoute,
+  constructor(private router: Router, private route: ActivatedRoute,
     private ecommerceService: EcommerceService) {
     this.route.params.subscribe(params => {
       this.searchCriteria = params.id;
+      this.loadSearchedProducts();
     });
+
   }
 
   ngOnInit() {
@@ -31,7 +33,7 @@ export class SearchComponent implements OnInit {
   }
 
   search(input): void {
-    input='/home/'+input;
+    input = '/home/' + input;
     this.router.navigate([input]);
   }
 }

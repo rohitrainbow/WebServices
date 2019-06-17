@@ -42,7 +42,7 @@ const appRoutes: Routes = [{
   path: 'productdetails/:id',
   component: ProductDescrComponent,
   data: { title: 'Product Details' }
-}];
+}, { path: '**', component: EcommerceComponent }];
 @NgModule({
   declarations: [
     AppComponent,

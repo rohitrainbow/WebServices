@@ -29,7 +29,6 @@ export class NavbarComponent implements OnInit {
     this.router.navigate([url]);
   }
   search(input): void {
-    input='/home/'+input;
-    this.router.navigate([input]);
+    this.router.navigate(['/home', input]);
   }
 }

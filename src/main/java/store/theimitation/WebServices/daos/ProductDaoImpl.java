@@ -26,9 +26,25 @@ public class ProductDaoImpl implements ProductDao {
 		// TODO Auto-generated method stub
 		List<Product> searchedProducts = new ArrayList<Product>();
 		try {
-			searchedProducts = entityManager
-					.createQuery("SELECT a FROM Product a where LOWER(a.searchKeywords) LIKE :inputCriteria")
-					.setParameter("inputCriteria", "%" + inputCriteria.toLowerCase() + "%").getResultList();
+			if (inputCriteria != null) {
+				String input[] = inputCriteria.split("-");
+				if (input.length == 1) {
+					searchedProducts = entityManager
+							.createQuery("SELECT a FROM Product a where LOWER(a.searchKeywords) LIKE :inputCriteria")
+							.setParameter("inputCriteria", "%" + inputCriteria.toLowerCase() + "%").getResultList();
+				} else if (input.length == 2) {
+					searchedProducts = entityManager.createQuery(
+							"SELECT a FROM Product a where a.category = :inputCategory AND a.forGender= :inputGender")
+							.setParameter("inputCategory", input[1] ).setParameter("inputGender", input[0])
+							.getResultList();
+				} else {
+					searchedProducts = entityManager.createQuery(
+							"SELECT a FROM Product a where a.category = :inputCategory AND a.forGender= :inputGender AND a.subCategory=:inputSubCategory")
+							.setParameter("inputCategory",  input[1] ).setParameter("inputGender", input[0])
+							.setParameter("inputSubCategory", input[2]).getResultList();
+				}
+			}
+
 		} catch (Exception e) {
 		}
 		return searchedProducts;
