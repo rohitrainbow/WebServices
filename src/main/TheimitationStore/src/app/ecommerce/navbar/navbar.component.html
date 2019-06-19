@@ -87,23 +87,24 @@
                         <hr class="dropdown-divider ">>
                         <li>
                             <div class="row ">
-                                <ul class="list-unstyled col-md-6 " style="width: 240px; text-emphasis: center; ">
-                                    <li><a class="dropdown-item " data-toggle="collapse " data-target="#navbarResponsive " href="# ">Orders</a></li>
-                                    <li><a class="dropdown-item " data-toggle="collapse " data-target="#navbarResponsive " href="# ">Coupons</a></li>
+                                <ul class="list-unstyled col-md-8 " style="width: 240px; text-emphasis: center; ">
+                                    <li><a class="dropdown-item " data-toggle="collapse " data-target="#navbarResponsive " (click)="redirect( 'about') "><i class="fa fa-address-card "></i>&nbsp;About Us</a></li>
+                                    <li>
+                                        <a class="dropdown-item " data-toggle="collapse " data-target="#navbarResponsive " (click)="redirect( 'contact') "><i class="fa fa-envelope-o "></i>&nbsp;Contact US</a></li>
                                 </ul>
                             </div>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item active ">
-                    <a class="nav-link " data-toggle="collapse " data-target="#navbarResponsive " (click)="redirect( 'about') "> <i class="fa fa-address-card ">
+                <li class=" nav-item active ">
+                    <a class="nav-link " data-toggle="collapse " data-target="#navbarResponsive " (click)="redirect( 'about') "> <i class="fa fa-shopping-cart">
                                
-                              </i>About Us</a>
+                              </i>Cart</a>
                 </li>
                 <li class="nav-item active ">
-                    <a class="nav-link " data-toggle="collapse " data-target="#navbarResponsive " (click)="redirect( 'contact') "> <i class="fa fa-envelope-o ">
+                    <a class="nav-link " data-toggle="collapse " data-target="#navbarResponsive " (click)="redirect( 'contact') "> <i class="fa fa-heart">
                                 
-                              </i>Contact Us</a>
+                              </i>Wishlist</a>
                 </li>
             </ul>
         </div>

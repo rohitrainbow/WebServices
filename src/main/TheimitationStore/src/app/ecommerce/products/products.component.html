@@ -8,7 +8,15 @@
                 <a href="#/productdetails/{{product.id}}">
                     <img class="card-img-top" src={{product.pictureUrl}} alt=""></a>
                 <h5 class="card-title">Rs.{{product.price}}</h5>
-                <div class="row">
+                <div *ngIf="1">
+                    <tr style="table-layout: fixed;white-space:nowrap;">
+                        <td>
+                            <button class="productButtons btn btn-primary"><i class="fa fa-shopping-cart"></i>&nbsp;Add To Cart
+                        </button> </td>
+                        &nbsp;
+                        <td><button class="productButtons btn btn-primary"><i class="fa fa-heart"></i>&nbsp;Wishlist
+                            </button></td>
+                    </tr>
                 </div>
             </div>
         </div>

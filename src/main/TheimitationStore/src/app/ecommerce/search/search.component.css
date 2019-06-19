@@ -54,3 +54,22 @@
     line-height: 100%;
     vertical-align: top;
 }
+
+.productButtons {
+    background-color: black;
+    color: rgba(255, 217, 0, 0.795);
+    border-color: rgba(255, 217, 0, 0.795);
+}
+
+.productButtons:hover {
+    background-color: rgba(255, 217, 0, 0.795);
+    color: black;
+    border-color: black;
+}
+
+.productButtons:focus {
+    background-color: black;
+    color: rgba(255, 217, 0, 0.795);
+    border-color: rgba(255, 217, 0, 0.795);
+    box-shadow: none;
+}
