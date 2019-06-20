@@ -10,11 +10,10 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./product-descr.component.css']
 })
 export class ProductDescrComponent implements OnInit {
-  productId: String;
+  productId: string;
   product: Product;
 
-  constructor(private route: ActivatedRoute,
-    private ecommerceService: EcommerceService) {
+  constructor(private route: ActivatedRoute, private ecommerceService: EcommerceService) {
     this.route.params.subscribe(params => {
       this.productId = params.id;
     });
