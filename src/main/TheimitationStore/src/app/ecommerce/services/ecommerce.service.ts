@@ -6,7 +6,7 @@ import { map } from "rxjs/operators";
   providedIn: 'root'
 })
 export class EcommerceService {
-  private productsUrl = "http://20.198.10.4/api/products";
+  private productsUrl = "api/products";
   private productDescrUrl = "api/product/";
   private searchedProductsUrl="api/searchedProducts/";
 
