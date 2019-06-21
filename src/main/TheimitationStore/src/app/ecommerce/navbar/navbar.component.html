@@ -98,12 +98,12 @@
                 </li>
                 <li class=" nav-item active ">
                     <a class="nav-link " data-toggle="collapse " data-target="#navbarResponsive " (click)="redirect( 'cart') "> <i class="fa fa-shopping-cart">
-                            <span class="badge badge-danger" *ngIf="cartItems!='[]'">{{cartItems.length}}</span>
+                            <span class="badge badge-danger" *ngIf="cartItems.length>0">{{cartItems.length}}</span>
                               </i>Cart</a>
                 </li>
                 <li class="nav-item active ">
                     <a class="nav-link " data-toggle="collapse " data-target="#navbarResponsive " (click)="redirect( 'contact') "> <i class="fa fa-heart">
-                            <span class="badge badge-danger" *ngIf="wishlistItems!='[]'">{{wishlistItems.length}}</span>
+                            <span class="badge badge-danger" *ngIf="wishlistItems.length>0">{{wishlistItems.length}}</span>
                               </i>Wishlist</a>
                 </li>
             </ul>
