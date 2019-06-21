@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContactComponent } from './ecommerce/contact/contact.component';
 import { NavbarComponent } from './ecommerce/navbar/navbar.component';
 import { SearchComponent } from './ecommerce/search/search.component';
+import { CartComponent } from './ecommerce/cart/cart.component';
 
 const appRoutes: Routes = [{
   path: '',
@@ -39,6 +40,11 @@ const appRoutes: Routes = [{
   data: { title: 'Contact Us' }
 },
 {
+  path: 'cart',
+  component: CartComponent,
+  data: { title: 'Cart' }
+},
+{
   path: 'productdetails/:id',
   component: ProductDescrComponent,
   data: { title: 'Product Details' }
@@ -52,7 +58,8 @@ const appRoutes: Routes = [{
     AboutComponent,
     ContactComponent,
     NavbarComponent,
-    SearchComponent
+    SearchComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +67,7 @@ const appRoutes: Routes = [{
     HttpClientModule,
     RouterModule.forRoot(appRoutes, { useHash: true })
   ],
-  providers: [],
+  providers: [NavbarComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

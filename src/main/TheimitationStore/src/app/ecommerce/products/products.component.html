@@ -11,10 +11,10 @@
                 <div *ngIf="1">
                     <tr style="table-layout: fixed;white-space:nowrap;">
                         <td>
-                            <button class="productButtons btn btn-primary"><i class="fa fa-shopping-cart"></i>&nbsp;Add To Cart
+                            <button (click)="updateCart(product.id)" class="productButtons btn btn-primary"><i class="fa fa-shopping-cart"></i>&nbsp;Add To Cart
                         </button> </td>
                         &nbsp;
-                        <td><button class="productButtons btn btn-primary"><i class="fa fa-heart"></i>&nbsp;Wishlist
+                        <td><button (click)="updateWishlist(product.id)" class="productButtons btn btn-primary"><i class="fa fa-heart"></i>&nbsp;Wishlist
                             </button></td>
                     </tr>
                 </div>

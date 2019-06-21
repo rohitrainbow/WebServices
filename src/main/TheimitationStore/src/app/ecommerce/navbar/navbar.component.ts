@@ -9,10 +9,25 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
   public collapsed = true;
   public collapsed2 = true;
+  cartItems: string[];
+  wishlistItems: string[];
   ngOnInit() {
+    if (!localStorage.getItem('cartItems'))
+      localStorage.setItem('cartItems', '[]');
+    if (!localStorage.getItem('wishlistItems'))
+      localStorage.setItem('wishlistItems', '[]');
   }
-  
-  constructor(private router: Router) { }
+
+  constructor(private router: Router) {
+    if (localStorage.getItem('cartItems') != (null && '[]')) {
+      this.cartItems = localStorage.getItem('cartItems').split(",");
+    }
+
+    if (localStorage.getItem('wishlistItems') != (null && '[]')) {
+      this.wishlistItems = localStorage.getItem('wishlistItems').split(",");
+    }
+
+  }
   toggleCollapsed(): void {
     this.collapsed = !this.collapsed;
   }
@@ -30,5 +45,12 @@ export class NavbarComponent implements OnInit {
   }
   search(input): void {
     this.router.navigate(['/home', input]);
+  }
+
+  cart() {
+  }
+
+  wishlist() {
+
   }
 }

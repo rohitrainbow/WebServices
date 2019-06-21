@@ -59,10 +59,10 @@
         <form class="form-inline ml-auto">
             <input type='text' class="form-control mr-sm-0" #inputCriteria type="search" placeholder="Search" aria-label="Search">
             <button (click)="search(inputCriteria.value)" class=" btn btn-outline-success my-0 my-sm-0 "><i class="fa fa-search "></i></button>
-            <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarResponsive " aria-controls="navbarResponsive " aria-expanded="false " aria-label="Toggle navigation " (click)="toggleCollapsed() ">
-                        <span class="navbar-toggler-icon "></span>
-                </button>
         </form>
+        <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarResponsive " aria-controls="navbarResponsive " aria-expanded="false " aria-label="Toggle navigation " (click)="toggleCollapsed() ">
+                <span class="navbar-toggler-icon "></span>
+        </button>
         <div id="navbarResponsive " [ngClass]="{ 'collapse': collapsed, 'navbar-collapse': true} ">
             <ul class="navbar-nav ml-auto ">
                 <li class="nav-item dropdown ">
@@ -97,13 +97,13 @@
                     </ul>
                 </li>
                 <li class=" nav-item active ">
-                    <a class="nav-link " data-toggle="collapse " data-target="#navbarResponsive " (click)="redirect( 'about') "> <i class="fa fa-shopping-cart">
-                               
+                    <a class="nav-link " data-toggle="collapse " data-target="#navbarResponsive " (click)="redirect( 'cart') "> <i class="fa fa-shopping-cart">
+                            <span class="badge badge-danger" *ngIf="cartItems!='[]'">{{cartItems.length}}</span>
                               </i>Cart</a>
                 </li>
                 <li class="nav-item active ">
                     <a class="nav-link " data-toggle="collapse " data-target="#navbarResponsive " (click)="redirect( 'contact') "> <i class="fa fa-heart">
-                                
+                            <span class="badge badge-danger" *ngIf="wishlistItems!='[]'">{{wishlistItems.length}}</span>
                               </i>Wishlist</a>
                 </li>
             </ul>

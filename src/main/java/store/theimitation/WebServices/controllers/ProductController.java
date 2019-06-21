@@ -16,7 +16,7 @@ import store.theimitation.WebServices.models.Product;
 import store.theimitation.WebServices.services.ProductService;
 
 @RestController
-@CrossOrigin(origins ="http://20.198.10.4:4200")
+@CrossOrigin(origins = {"http://20.198.10.4:4200","http://localhost:4200"})
 public class ProductController {
 
 	@Autowired
