@@ -3,6 +3,7 @@ import { EcommerceService } from '../services/ecommerce.service';
 import { Product } from '../model/product';
 import { ActivatedRoute } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { Cart } from '../model/cart';
 
 @Component({
   selector: 'app-products',
@@ -11,8 +12,9 @@ import { NavbarComponent } from '../navbar/navbar.component';
 })
 export class ProductsComponent implements OnInit {
   inputCriteria: String;
+  cart:Cart;
   products: Product[] = [];
-  cartItems: string[];
+  cartItems: Cart[];
   wishlistItems: string[];
   constructor(private ecommerceService: EcommerceService, private navbarComponent: NavbarComponent) {
   }
@@ -32,11 +34,14 @@ export class ProductsComponent implements OnInit {
     this.cartItems = JSON.parse(localStorage.getItem('cartItems'));
     var i = 0;
     for (i = 0; i < this.cartItems.length; i++) {
-      if (this.cartItems[i] == id)
+      if (this.cartItems[i].id+"" == id)
         break;
     }
     if (i == this.cartItems.length) {
-      this.cartItems[this.cartItems.length] = id;
+      this.cart=new Cart();
+      this.cart.id=+id;
+      this.cart.quantity=1;
+      this.cartItems[this.cartItems.length] = this.cart;
       localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
 
     }

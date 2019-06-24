@@ -94,4 +94,10 @@ public class ProductServiceImpl implements ProductService {
 	public Iterable<Product> getSearchedProducts(String inputCriteria) {
 		return productDao.getSearchedProducts(inputCriteria);
 	}
+
+	@Override
+	public Iterable<Product> getCartProducts(String[] cartItems) {
+		// TODO Auto-generated method stub
+		return productDao.getCartProducts(cartItems);
+	}
 }

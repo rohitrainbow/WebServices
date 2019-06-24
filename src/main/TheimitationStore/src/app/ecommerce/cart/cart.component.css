@@ -1,0 +1,120 @@
+.img-responsive {
+    width: 100px;
+    height: 85px;
+}
+
+.table>tbody>tr>td,
+.table>tfoot>tr>td {
+    vertical-align: middle;
+}
+
+.circles {
+    background: black;
+    text-align: center;
+    position: center;
+    margin-top: -60px;
+    box-shadow: inset -1px -4px 4px rgba(0, 0, 0, 0.2);
+    padding-bottom: 100px;
+}
+
+.circles p {
+    font-size: 10px;
+    color: #fff;
+    padding-top: 60px;
+    position: relative;
+    z-index: 9;
+    line-height: 100%;
+}
+
+.circles p small {
+    font-size: 30px;
+    line-height: 100%;
+    vertical-align: top;
+}
+
+.productButtons {
+    background-color: black;
+    color: rgba(255, 217, 0, 0.795);
+    border-color: rgba(255, 217, 0, 0.795);
+}
+
+.productButtons:hover {
+    background-color: rgba(255, 217, 0, 0.795);
+    color: black;
+    border-color: black;
+}
+
+.productButtons:focus {
+    background-color: black;
+    color: rgba(255, 217, 0, 0.795);
+    border-color: rgba(255, 217, 0, 0.795);
+    box-shadow: none;
+}
+
+.btn-outline-success {
+    color: rgba(255, 217, 0, 0.795);
+    background-color: transparent;
+    background-image: none;
+    border-color: rgba(255, 217, 0, 0.795);
+}
+
+.btn-outline-success:hover {
+    background-color: rgba(255, 217, 0, 0.795);
+    border-color: rgba(255, 217, 0, 0.795);
+    color: black;
+}
+
+.btn-outline-success:focus,
+.btn-outline-success.focus {
+    box-shadow: 0 0 0 .5rem rgba(255, 217, 0, 0.795);
+}
+
+.form-inline {
+    justify-content: center;
+}
+
+.form-control {
+    width: 400px;
+    border-color: rgba(255, 217, 0, 0.795);
+}
+
+@media screen and (max-width: 600px) {
+    table#cart tbody td .form-control {
+        width: 20%;
+        display: inline !important;
+    }
+    .actions .btn {
+        width: 36%;
+        margin: 1.5em 0;
+    }
+    .actions .btn-info {
+        float: left;
+    }
+    .actions .btn-danger {
+        float: right;
+    }
+    table#cart thead {
+        display: none;
+    }
+    table#cart tbody td {
+        display: block;
+        padding: .6rem;
+        min-width: 320px;
+    }
+    table#cart tbody tr td:first-child {
+        background: #333;
+        color: #fff;
+    }
+    table#cart tbody td:before {
+        content: attr(data-th);
+        font-weight: bold;
+        display: inline-block;
+        width: 8rem;
+    }
+    table#cart tfoot td {
+        display: block;
+    }
+    table#cart tfoot td .btn {
+        display: block;
+    }
+}

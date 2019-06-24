@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { ContactComponent } from './ecommerce/contact/contact.component';
 import { NavbarComponent } from './ecommerce/navbar/navbar.component';
 import { SearchComponent } from './ecommerce/search/search.component';
 import { CartComponent } from './ecommerce/cart/cart.component';
+import { LoginComponent } from './ecommerce/login/login.component';
+import { RegisterComponent } from './ecommerce/register/register.component';
 
 const appRoutes: Routes = [{
   path: '',
@@ -45,6 +48,16 @@ const appRoutes: Routes = [{
   data: { title: 'Cart' }
 },
 {
+  path: 'login',
+  component: LoginComponent,
+  data: { title: 'Login' }
+}, 
+{
+  path: 'register',
+  component: RegisterComponent,
+  data: { title: 'Register' }
+},
+{
   path: 'productdetails/:id',
   component: ProductDescrComponent,
   data: { title: 'Product Details' }
@@ -59,15 +72,19 @@ const appRoutes: Routes = [{
     ContactComponent,
     NavbarComponent,
     SearchComponent,
-    CartComponent
+    CartComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes, { useHash: true })
   ],
-  providers: [NavbarComponent ],
+  providers: [NavbarComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

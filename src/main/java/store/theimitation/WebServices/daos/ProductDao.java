@@ -4,4 +4,5 @@ import store.theimitation.WebServices.models.Product;
 
 public interface ProductDao {
 	Iterable<Product> getSearchedProducts(String inputCriteria);
+	Iterable<Product> getCartProducts(String[] cartItems);
 }

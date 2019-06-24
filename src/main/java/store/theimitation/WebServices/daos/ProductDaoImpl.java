@@ -35,12 +35,12 @@ public class ProductDaoImpl implements ProductDao {
 				} else if (input.length == 2) {
 					searchedProducts = entityManager.createQuery(
 							"SELECT a FROM Product a where a.category = :inputCategory AND a.forGender= :inputGender")
-							.setParameter("inputCategory", input[1] ).setParameter("inputGender", input[0])
+							.setParameter("inputCategory", input[1]).setParameter("inputGender", input[0])
 							.getResultList();
 				} else {
 					searchedProducts = entityManager.createQuery(
 							"SELECT a FROM Product a where a.category = :inputCategory AND a.forGender= :inputGender AND a.subCategory=:inputSubCategory")
-							.setParameter("inputCategory",  input[1] ).setParameter("inputGender", input[0])
+							.setParameter("inputCategory", input[1]).setParameter("inputGender", input[0])
 							.setParameter("inputSubCategory", input[2]).getResultList();
 				}
 			}
@@ -48,6 +48,21 @@ public class ProductDaoImpl implements ProductDao {
 		} catch (Exception e) {
 		}
 		return searchedProducts;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Iterable<Product> getCartProducts(String[] cartItems) {
+		// TODO Auto-generated method stub
+		List<Product> cartProducts = new ArrayList<Product>();
+		try {
+
+			String filterCriteria = String.join(",", cartItems);
+			cartProducts = entityManager.createQuery("SELECT a FROM Product a where a.id IN (" + filterCriteria + ")")
+					.getResultList();
+		} catch (Exception e) {
+		}
+		return cartProducts;
 	}
 
 }

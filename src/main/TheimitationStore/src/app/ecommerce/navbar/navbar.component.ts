@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Cart } from '../model/cart';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
   public collapsed = true;
   public collapsed2 = true;
-  cartItems: string[];
+  cartItems: Cart[];
   wishlistItems: string[];
   ngOnInit() {
     if (!localStorage.getItem('cartItems'))

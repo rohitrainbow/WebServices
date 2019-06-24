@@ -6,9 +6,10 @@ import { map } from "rxjs/operators";
   providedIn: 'root'
 })
 export class EcommerceService {
-  private productsUrl = "api/products";
+  private productsUrl = "http://localhost/api/products";
   private productDescrUrl = "api/product/";
   private searchedProductsUrl="api/searchedProducts/";
+
 
   constructor(private http: HttpClient) { }
 
@@ -24,7 +25,5 @@ export class EcommerceService {
     return this.http.post<any>(this.productDescrUrl + id, {}).pipe(map(product => { return product; }));
   }
 
-  updateCart(id: string){
-    
-  }
+
 }

@@ -26,4 +26,6 @@ public interface ProductService {
 	
 	
 	Iterable<Product> getSearchedProducts(String inputCriteria);
+	
+	Iterable<Product> getCartProducts(String[] cartItems);
 }
