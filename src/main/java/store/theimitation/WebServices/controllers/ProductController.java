@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import store.theimitation.WebServices.dtos.ProdDescrDto;
 import store.theimitation.WebServices.dtos.ProductDto;
-import store.theimitation.WebServices.models.Cart;
 import store.theimitation.WebServices.models.Product;
 import store.theimitation.WebServices.services.ProductService;
 
@@ -46,12 +45,5 @@ public class ProductController {
 	@RequestMapping("/api/searchedProducts/{inputCriteria}")
 	public @NotNull Iterable<Product> getSearchedProducts(@PathVariable String inputCriteria) {
 		return productService.getSearchedProducts(inputCriteria);
-	}
-	
-	
-	@RequestMapping("/api/cartProducts/{cartItems}")
-	public @NotNull Iterable<Product> getCartProducts(@PathVariable Cart[] cartItems) {
-		System.out.println(cartItems[0]);
-		return productService.getCartProducts(new String[1]);
 	}
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EcommerceService } from '../services/ecommerce.service';
 import { Product } from '../model/product';
 import { CartService } from '../services/cart.service';
+import { CartProducts } from '../model/cart-products';
+import { Cart } from '../model/cart';
 
 @Component({
   selector: 'app-cart',
@@ -9,8 +11,8 @@ import { CartService } from '../services/cart.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  cartProducts: Product[] = [];
-  cartItems: string[];
+  cartProducts: CartProducts[] = [];
+  cartItems: Cart[];
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
@@ -21,15 +23,22 @@ export class CartComponent implements OnInit {
 
   getCartProducts() {
     this.cartService.getCartProducts()
-      .subscribe((products: any[]) => {
-        this.cartProducts = products;
+      .subscribe(cartItems => {
+        this.cartProducts = JSON.parse(cartItems);
       }
       );
   }
 
   removeFromCart(id: string) {
     this.cartItems = JSON.parse(localStorage.getItem('cartItems'));
-    const index: number = this.cartItems.indexOf(id);
+    var del: number;
+    for (var i = 0; i < this.cartItems.length; i++) {
+      if (this.cartItems[i].id + "" == id) {
+        del = i;
+        break;
+      }
+    }
+    const index: number = this.cartItems.indexOf(this.cartItems[del]);
     if (index !== -1) {
       this.cartItems.splice(index, 1);
     }

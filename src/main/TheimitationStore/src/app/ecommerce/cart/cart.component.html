@@ -10,27 +10,28 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let product of cartProducts">
+            <tr *ngFor="let cartProduct of cartProducts">
                 <td data-th="Product">
                     <div class="row">
-                        <div class="col-sm-2 hidden-xs"><img src="http://localhost/{{product.pictureUrl}}" alt="..." class="img-responsive" /></div>
+                        <div class="col-sm-2 hidden-xs"><img src="http://localhost/{{cartProduct.product.pictureUrl}}" alt="..." class="img-responsive" /></div>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="col-sm-15">
-                            <h4>{{product.name}}</h4>
+                            <h4>{{cartProduct.product.name}}</h4>
 
-                            <p>{{product.prodDescr.descr}}</p>
+                            <p>{{cartProduct.product.prodDescr.descr}}</p>
                         </div>
                     </div>
                 </td>
-                <td data-th="Price"> &nbsp;{{product.price}}</td>
+                <td data-th="Price"> &nbsp;Rs.{{cartProduct.product.price}}</td>
                 <td data-th="Quantity">
                     &nbsp; &nbsp; &nbsp; &nbsp;1
                 </td>
                 <td data-th="Subtotal" class="text-center">
+                    Rs.{{cartProduct.subTotal}}
                 </td>
                 <td class="actions" data-th="">
 
-                    <button class="btn btn-danger btn-sm" (click)="removeFromCart(product.id);"><i class="fa fa-trash-o"></i></button>
+                    <button class="btn btn-danger btn-sm" (click)="removeFromCart(cartProduct.product.id);"><i class="fa fa-trash-o"></i></button>
                 </td>
             </tr>
 
@@ -40,7 +41,7 @@
             <tr>
                 <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
                 <td colspan="2" class="hidden-xs"></td>
-                <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
+                <td class="hidden-xs text-center"><strong>Total : Rs. {{cartProducts[cartProducts.length-1].total}}</strong></td>
                 <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
             </tr>
         </tfoot>

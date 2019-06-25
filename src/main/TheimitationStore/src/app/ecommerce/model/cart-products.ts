@@ -1,11 +1,7 @@
-import { ProdDescr } from './prod-descr';
+import { Product } from './product';
 
 export class CartProducts {
-    id: number;
-    name: string;
-    price: number;
-    pictureUrl: string;
-    prodDescr:ProdDescr;
+    product:Product;
     subTotal:number;
     total:number;
 }

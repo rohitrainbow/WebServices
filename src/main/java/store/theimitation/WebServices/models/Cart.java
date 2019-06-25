@@ -1,8 +1,18 @@
 package store.theimitation.WebServices.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Cart {
+	@Id
 	private Integer id;
 	private Integer quantity;
+	
+	@Column(name = "user_id", unique = true, nullable = false)
+	private Long userId;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -17,7 +27,7 @@ public class Cart {
 	}
 	@Override
 	public String toString() {
-		return "Cart [id=" + id + ", quantity=" + quantity + "]";
+		return id+"";
 	}
 	
 }
