@@ -20,6 +20,7 @@ export class NavbarComponent implements OnInit {
   }
 
   constructor(private router: Router) {
+
     if (localStorage.getItem('cartItems') != (null && '[]')) {
       this.cartItems = JSON.parse(localStorage.getItem('cartItems'));
     }
@@ -30,7 +31,8 @@ export class NavbarComponent implements OnInit {
       this.wishlistItems = JSON.parse(localStorage.getItem('wishlistItems'));
     }
     else
-      this.wishlistItems = []
+      this.wishlistItems = [];
+
 
   }
   toggleCollapsed(): void {

@@ -29,9 +29,11 @@ public class Product {
 	private String searchKeywords;
 	
 	private String forGender;
+	
+	private Integer quantity;
 
 	public Product(Long id, @NotNull(message = "Product name is required.") String name, Double price,
-			String pictureUrl, ProdDescr prodDescr, String category, String subCategory,String searchKeywords,String forGender) {
+			String pictureUrl, ProdDescr prodDescr, String category, String subCategory,String searchKeywords,String forGender, Integer quantity) {
 		this.id = id;
 		this.name = name;
 		this.price = price;
@@ -41,6 +43,7 @@ public class Product {
 		this.category=category;
 		this.forGender=forGender;
 		this.searchKeywords=searchKeywords;
+		this.setQuantity(quantity);
 	}
 
 	public Product() {
@@ -116,6 +119,14 @@ public class Product {
 
 	public void setForGender(String forGender) {
 		this.forGender = forGender;
+	}
+
+	public Integer getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
 	}
 	
 	

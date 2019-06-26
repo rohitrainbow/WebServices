@@ -79,22 +79,22 @@ select * from product
 
 delete from product;
 delete from prod_descr;
-insert into product values('100', 'necklace','women', 'Beer', 'images/beer.jpg',458.00,'beersetspearl','pearl','100');
+insert into product values('100', 'necklace','women', 'Beer', 'images/beer.jpg',458.00,1,'beersetspearl','pearl','100');
 select * from product;
 insert into prod_descr values ('100','test',100);
 
-insert into product values('101', 'necklace','women',  'Beer', 'images/beer.jpg',458.00,'sets','gold','101');
+insert into product values('101', 'necklace','women',  'Beer', 'images/beer.jpg',458.00,1,'sets','gold','101');
 select * from product;
 insert into prod_descr values ('101','test',101);
 
-insert into product values('102', 'earrings', 'women', 'Beer', 'images/beer.jpg',458.00,'pearl','diamond','102');
+insert into product values('102', 'earrings', 'women', 'Beer', 'images/beer.jpg',458.00,1,'pearl','diamond','102');
 select * from product;
 insert into prod_descr values ('102','test',102);
 
-insert into product values('103', 'rings','women',  'Beer', 'images/beer.jpg',458.00,'earpearlearring','multicolor','103');
+insert into product values('103', 'rings','women',  'Beer', 'images/beer.jpg',458.00,1,'earpearlearring','multicolor','103');
 select * from product;
 insert into prod_descr values ('103','test',103);
 
-insert into product values('104', 'others','women', 'Beer', 'images/beer.jpg',458.00,'jewel','pearl','104');
+insert into product values('104', 'others','women', 'Beer', 'images/beer.jpg',458.00,1,'jewel','pearl','104');
 select * from product;
 insert into prod_descr values ('104','test',104);

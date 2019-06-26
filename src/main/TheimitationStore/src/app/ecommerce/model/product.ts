@@ -6,4 +6,5 @@ export class Product {
     price: number;
     pictureUrl: string;
     prodDescr:ProdDescr;
+    quantity: number;
 }

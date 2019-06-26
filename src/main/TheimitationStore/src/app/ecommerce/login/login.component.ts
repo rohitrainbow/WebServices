@@ -19,14 +19,16 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService) {
-      if (JSON.parse(localStorage.getItem('currentUser')) != null) {
-        this.router.navigate(['/home']);
-      }
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    if (JSON.parse(localStorage.getItem('currentUser')) != null) {
+      this.router.navigate([this.returnUrl]);
+    }
   }
 
   ngOnInit() {
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     if (JSON.parse(localStorage.getItem('currentUser')) != null) {
-      this.router.navigate(['/home']);
+      this.router.navigate([this.returnUrl]);
     }
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
@@ -56,7 +58,7 @@ export class LoginComponent implements OnInit {
         data => {
 
           if (data.token != null) {
-            this.router.navigate([this.returnUrl + '/home']);
+            this.router.navigate([this.returnUrl]);
           } else {
             this.submitted = false;
             this.loading = false;

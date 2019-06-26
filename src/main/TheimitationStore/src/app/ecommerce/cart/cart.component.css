@@ -19,7 +19,7 @@
 
 .circles p {
     font-size: 10px;
-    color: #fff;
+    color: #fff !important;
     padding-top: 60px;
     position: relative;
     z-index: 9;
@@ -103,7 +103,7 @@
     }
     table#cart tbody tr td:first-child {
         background: #333;
-        color: #fff;
+        color: #fff !important;
     }
     table#cart tbody td:before {
         content: attr(data-th);

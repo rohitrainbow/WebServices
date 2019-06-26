@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -34,6 +35,10 @@ public class User {
 	@OneToOne
 	@JoinColumn(name = "cart_id")
 	private Cart cart;
+	
+	@ManyToOne
+	@JoinColumn(name = "address_id")
+	private Address address;
 
 	public String getEmailToken() {
 		return emailToken;

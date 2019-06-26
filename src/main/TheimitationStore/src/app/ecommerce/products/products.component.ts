@@ -4,6 +4,7 @@ import { Product } from '../model/product';
 import { ActivatedRoute } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { Cart } from '../model/cart';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-products',
@@ -45,6 +46,7 @@ export class ProductsComponent implements OnInit {
       localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
 
     }
+    this.navbarComponent.cart();
   }
 
   updateWishlist(id: string) {
