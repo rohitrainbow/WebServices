@@ -21,14 +21,15 @@ export class LoginComponent implements OnInit {
     private authenticationService: AuthenticationService) {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     if (JSON.parse(localStorage.getItem('currentUser')) != null) {
-      this.router.navigate([this.returnUrl]);
+      this.router.navigateByUrl(this.returnUrl);
     }
+
   }
 
   ngOnInit() {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     if (JSON.parse(localStorage.getItem('currentUser')) != null) {
-      this.router.navigate([this.returnUrl]);
+      this.router.navigateByUrl(this.returnUrl);
     }
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
@@ -40,6 +41,8 @@ export class LoginComponent implements OnInit {
 
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+
+    console.log(this.returnUrl);
   }
 
   get f() { return this.loginForm.controls; }
@@ -58,7 +61,7 @@ export class LoginComponent implements OnInit {
         data => {
 
           if (data.token != null) {
-            this.router.navigate([this.returnUrl]);
+            this.router.navigateByUrl(this.returnUrl);
           } else {
             this.submitted = false;
             this.loading = false;
